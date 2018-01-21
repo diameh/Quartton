@@ -22,7 +22,7 @@ object Board {
 
   //referentially transparent = def can be replaced with val because the value of it is never changed, we don't even have input
   val allFigures = for {
-    c <- Set(Light, Dark)   //it is enough when outermost is Set then it will yielded to a Set
+    c <- Set(Light, Dark)   //it is enough when outermost is Set then it will yield to a Set
     h <- Seq(Short, Tall)
     s <- Seq(Round, Square)
     f <- Seq(Filled, Hollow)
@@ -105,7 +105,7 @@ case class Figure(c: FigColor, h: Height, s: FigShape, f: Fill) {
   override def toString(): String = c.toString + h.toString + s.toString + f.toString
 }
 
-// boyfriend hint: that toString should return the name could be made into a trait and reused
+//hint toString should return the name, could be made into a trait and reused
 trait ToStringIsName {
    def name: String
    override def toString = name
